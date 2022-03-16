@@ -1,8 +1,8 @@
 import * as React from 'react';
-import List from './Components/List';
-import Search from './Components/Search';
+import { List } from './Components/List';
+import { Search } from './Components/Search';
 
-const list = [
+const stories = [
   {
     title: 'React',
     url: 'https://reactjs.org/',
@@ -19,17 +19,13 @@ const list = [
     objectID: 1,
 }, ];
 
-function App() {
-  return (
+export const App = () => {
+  return(
     <div>
       <h1>My Hacker Stories</h1>
-      
       <Search />
-      
       <hr />
-
-      <List list={list} />
+      <List list={stories} />
     </div>
-    );
-  }
-export default App;
+  )
+};
