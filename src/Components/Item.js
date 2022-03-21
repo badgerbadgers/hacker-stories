@@ -1,18 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-function Item(data) {
-  return (
-    <div>      
-      <li key={data.item.objectID}>
-      <span>
-      <a href={data.item.url}>{data.item.title}</a>
-      </span>
-      <span>{data.item.author}</span>
-      <span>{data.item.num_comments.comments}</span>
-      <span>{data.item.points}</span>
-      </li>
-    </div>
-  )
-}
+const Item = ({ item }) => ( 
+  <li>
+    <span>
+      <a href={item.url}>{item.title}</a>
+    </span>
+    <span>{item.author}</span>
+    <span>{item.num_comments}</span>
+    <span>{item.points}</span>
+  </li> 
+);
 
-export default Item
+export default Item;

@@ -1,15 +1,17 @@
 import React from 'react';
 
-export const Search = () => {
-
-  const handleChange = (event) => {
-    console.log(event);
-  };
+export const Search = ({ search, onSearch }) => {
 
   return(
-    <div>
-      <label htmlFor='search'>Search</label>
-      <input id="search" type="text" onChange={handleChange} />
-    </div>
+    <>
+      <label key="1" htmlFor='search'>Search</label>
+      <input 
+      key="2"
+      id="search" 
+      type="text" 
+      value={search}
+      onChange={onSearch}
+      />
+    </>
   );
 };
