@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { List } from './Components/List';
-import { Search } from './Components/Search';
+import { InputWithLabel } from './Components/InputWithLabel';
 
 const useSemiPersistentState = (key, initialState) => {
   const [value, setValue] = React.useState(
@@ -40,6 +40,7 @@ export const App = () => {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
+
   };
 
   const searchedStories = stories.filter((story) =>
@@ -49,7 +50,16 @@ export const App = () => {
   return(
     <div>
       <h1>My Hacker Stories</h1>
-        <Search search={searchTerm} onSearch={handleSearch}/>
+
+      <InputWithLabel
+        id="search"
+        label="Search"
+        value={searchTerm}
+        isFocused
+        onInputChange={handleSearch}
+      >
+        <strong>Search:</strong>
+      </InputWithLabel>
       <hr />
         <List list={searchedStories} />
     </div>
